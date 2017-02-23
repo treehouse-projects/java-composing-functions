@@ -19,7 +19,12 @@ public class App {
 
     Function<String, String> markeddownSanitizer = sanitizer.compose(Markdown::render);
     String result = Renderer.render(htmlInput, markeddownSanitizer);
-
+    System.out.println("HTML is safe...");
     System.out.println(result);
+    result = Renderer.render(markdownInput, markeddownSanitizer);
+    System.out.println("Markdown is too...");
+    System.out.println(result);
+
+
   }
 }
